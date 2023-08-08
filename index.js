@@ -8,6 +8,7 @@ const axios = require('axios')
 const authRoute = require("./routes/authentication")
 const movieRoute = require("./routes/movie")
 const ecommerceRoute = require("./routes/ecommerce")
+const foodRoute = require("./routes/foodToken")
 
 dotenv.config();
 const app = express();
@@ -51,6 +52,7 @@ cron.schedule('*/10 * * * *', () => {
 app.use("/auth", authRoute);
 app.use("/movieAPI", movieRoute);
 app.use("/ecomAPI", ecommerceRoute);
+app.use("/foodAPI", foodRoute);
 
 app.listen(5000, () => {
     console.log("Backend server is running!");
