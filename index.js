@@ -48,7 +48,7 @@ cron.schedule('*/10 * * * *', () => {
 
 
 app.use("/auth", authRoute);
-app.use("/movie", movieRoute);
+app.use("/movieAPI", movieRoute);
 
 app.listen(5000, () => {
     console.log("Backend server is running!");
