@@ -1,11 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const authRoute = require("./routes/authentication")
 const cors = require("cors")
 const cron = require('node-cron');
 const axios = require('axios')
 
+const authRoute = require("./routes/authentication")
+const movieRoute = require("./routes/movie")
 
 dotenv.config();
 const app = express();
@@ -47,6 +48,7 @@ cron.schedule('*/10 * * * *', () => {
 
 
 app.use("/auth", authRoute);
+app.use("/movie", movieRoute);
 
 app.listen(5000, () => {
     console.log("Backend server is running!");
